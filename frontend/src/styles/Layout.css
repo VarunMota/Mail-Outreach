@@ -47,10 +47,10 @@
 
 .sidebar-nav {
     flex: 1;
-    padding: 12px 12px;
+    padding: 16px 10px;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 8px;
     overflow-y: auto;
 }
 
@@ -59,7 +59,7 @@
     align-items: center;
     gap: 12px;
     padding: 10px 14px;
-    border-radius: 10px;
+    border-radius: 12px;
     color: var(--color-text-secondary);
     text-decoration: none;
     transition: all var(--transition-base);
@@ -69,17 +69,18 @@
 }
 
 .nav-link:hover {
-    background-color: var(--color-bg-tertiary);
+    background-color: rgba(79, 70, 229, 0.05);
     color: var(--color-primary);
     transform: translateX(2px);
 }
 
 .nav-link.active {
-    background: linear-gradient(135deg, rgba(79, 70, 229, 0.1) 0%, rgba(59, 130, 246, 0.05) 100%);
+    background: linear-gradient(135deg, rgba(79, 70, 229, 0.12) 0%, rgba(59, 130, 246, 0.08) 100%);
     color: var(--color-primary);
     font-weight: 600;
     border-left: 3px solid var(--color-primary);
     padding-left: 11px;
+    box-shadow: inset 0 0 8px rgba(79, 70, 229, 0.1);
 }
 
 .nav-link svg {
@@ -371,3 +372,67 @@
 .nav-link:nth-child(5) { animation-delay: 0.35s; }
 .nav-link:nth-child(6) { animation-delay: 0.4s; }
 .nav-link:nth-child(7) { animation-delay: 0.45s; }
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 240px;
+    }
+    
+    .main-content {
+        margin-left: 240px;
+        padding: 24px;
+    }
+    
+    .logo {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        left: 0;
+        top: 0;
+        border-right: none;
+        border-bottom: 1px solid var(--color-border);
+        flex-direction: row;
+        align-items: center;
+        padding: 12px 16px;
+    }
+    
+    .sidebar-header {
+        padding: 0;
+        border-bottom: none;
+        display: flex;
+        align-items: center;
+        flex: 1;
+    }
+    
+    .logo {
+        font-size: 1rem;
+    }
+    
+    .sidebar-nav {
+        display: none;
+        flex-direction: row;
+        padding: 0;
+        gap: 0;
+        flex: 1;
+    }
+    
+    .main-content {
+        margin-left: 0;
+        padding: 20px;
+    }
+    
+    .sidebar-footer {
+        padding: 0;
+        border-top: none;
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+    }
+}

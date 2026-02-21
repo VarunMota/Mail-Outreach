@@ -5,7 +5,8 @@ import {
     MousePointer,
     MessageSquare,
     Activity as ActivityIcon,
-    Loader2
+    Loader2,
+    TrendingUp
 } from 'lucide-react';
 import {
     BarChart,
@@ -14,9 +15,12 @@ import {
     YAxis,
     CartesianGrid,
     Tooltip,
-    ResponsiveContainer
+    ResponsiveContainer,
+    LineChart,
+    Line
 } from 'recharts';
 import { campaignService, type ActivityItem } from '../services/campaignService';
+import TimeRangeSelector from '../components/TimeRangeSelector';
 import '../styles/Dashboard.css';
 
 const formatRelativeTime = (timestamp: string): string => {
@@ -87,12 +91,12 @@ const Dashboard = () => {
     return (
         <div className="dashboard-container">
             <div className="dashboard-header">
-                <div>
-                    <h1>Welcome back! 👋</h1>
-                    <p>Here's your email outreach performance at a glance.</p>
-                </div>
-                <div className="date-range-picker">
-                    <span>Last 7 Days</span>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                    <div>
+                        <h1>Welcome back! 👋</h1>
+                        <p>Here's your email outreach performance at a glance.</p>
+                    </div>
+                    <TimeRangeSelector />
                 </div>
             </div>
 

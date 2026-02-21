@@ -1,10 +1,14 @@
+import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, LineChart, Line } from 'recharts';
 import { Loader2, TrendingUp, Users, MousePointer, MessageSquare } from 'lucide-react';
 import { campaignService } from '../services/campaignService';
+import TimeRangeSelector from '../components/TimeRangeSelector';
 import '../styles/Dashboard.css';
 
 const Analytics = () => {
+    const [activeTab, setActiveTab] = useState<'overview' | 'performance' | 'deliverability'>('overview');
+    
     const { data: summary, isLoading, error } = useQuery({
         queryKey: ['dashboard-summary'],
         queryFn: () => campaignService.getDashboardSummary(),
@@ -55,10 +59,37 @@ const Analytics = () => {
     return (
         <div className="dashboard-container">
             <div className="dashboard-header">
-                <div>
-                    <h1>Analytics</h1>
-                    <p>Detailed insights into your email outreach performance.</p>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                    <div>
+                        <h1>Analytics</h1>
+                        <p>Detailed insights into your email outreach performance.</p>
+                    </div>
+                    <TimeRangeSelector />
                 </div>
+            </div>
+            
+            {/* Analytics Tabs */}
+            <div style={{ display: 'flex', gap: '32px', borderBottom: '2px solid #e5e7eb', marginBottom: '32px' }}>
+                {['overview', 'performance', 'deliverability'].map((tab) => (
+                    <button
+                        key={tab}
+                        onClick={() => setActiveTab(tab as any)}
+                        style={{
+                            padding: '12px 0',
+                            border: 'none',
+                            background: 'none',
+                            cursor: 'pointer',
+                            fontSize: '0.95rem',
+                            fontWeight: activeTab === tab ? '700' : '600',
+                            color: activeTab === tab ? '#4f46e5' : '#475569',
+                            borderBottom: activeTab === tab ? '3px solid #4f46e5' : 'none',
+                            transition: 'all 250ms ease-in-out',
+                            textTransform: 'capitalize'
+                        }}
+                    >
+                        {tab}
+                    </button>
+                ))}
             </div>
 
             {/* Stats Grid */}
