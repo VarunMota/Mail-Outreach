@@ -85,7 +85,7 @@ const CampaignList = () => {
             <div className="page-header">
                 <div>
                     <h1>Campaigns</h1>
-                    <p>Manage your email outreach campaigns.</p>
+                    <p>Manage your email outreach campaigns with analytics and performance tracking.</p>
                 </div>
                 <Link to="/campaigns/new" className="primary-btn">
                     <Plus size={20} />

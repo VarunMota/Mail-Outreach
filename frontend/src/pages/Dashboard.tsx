@@ -88,8 +88,8 @@ const Dashboard = () => {
         <div className="dashboard-container">
             <div className="dashboard-header">
                 <div>
-                    <h1>Dashboard</h1>
-                    <p>Overview of your email outreach performance.</p>
+                    <h1>Welcome back! 👋</h1>
+                    <p>Here's your email outreach performance at a glance.</p>
                 </div>
                 <div className="date-range-picker">
                     <span>Last 7 Days</span>
@@ -99,64 +99,87 @@ const Dashboard = () => {
             {/* Stats Grid */}
             <div className="stats-grid">
                 <div className="stat-card">
-                    <div className="stat-icon sent">
-                        <Send size={24} />
-                    </div>
-                    <div className="stat-content">
-                        <p className="stat-label">Total Sent</p>
-                        <p className="stat-value">{stats.total_sent.toLocaleString()}</p>
-                        <p className="stat-change positive">All time</p>
-                    </div>
-                </div>
-
-                <div className="stat-card">
-                    <div className="stat-icon opened">
-                        <Users size={24} />
-                    </div>
-                    <div className="stat-content">
-                        <p className="stat-label">Open Rate</p>
-                        <p className="stat-value">{stats.open_rate}%</p>
-                        <p className="stat-change positive">Avg. across campaigns</p>
+                    <div className="stat-card-header">
+                        <div className="stat-content">
+                            <p className="stat-label">Total Sent</p>
+                            <p className="stat-value">{stats.total_sent.toLocaleString()}</p>
+                            <p className="stat-change positive">
+                                <span className="change-value">All time</span>
+                            </p>
+                        </div>
+                        <div className="stat-icon sent">
+                            <Send size={24} />
+                        </div>
                     </div>
                 </div>
 
                 <div className="stat-card">
-                    <div className="stat-icon clicked">
-                        <MousePointer size={24} />
-                    </div>
-                    <div className="stat-content">
-                        <p className="stat-label">Click Rate</p>
-                        <p className="stat-value">{stats.click_rate}%</p>
-                        <p className="stat-change positive">Avg. across campaigns</p>
+                    <div className="stat-card-header">
+                        <div className="stat-content">
+                            <p className="stat-label">Open Rate</p>
+                            <p className="stat-value">{stats.open_rate}%</p>
+                            <p className="stat-change positive">
+                                <span className="change-value">Avg. across campaigns</span>
+                            </p>
+                        </div>
+                        <div className="stat-icon opened">
+                            <Users size={24} />
+                        </div>
                     </div>
                 </div>
 
                 <div className="stat-card">
-                    <div className="stat-icon replied">
-                        <MessageSquare size={24} />
+                    <div className="stat-card-header">
+                        <div className="stat-content">
+                            <p className="stat-label">Click Rate</p>
+                            <p className="stat-value">{stats.click_rate}%</p>
+                            <p className="stat-change positive">
+                                <span className="change-value">Avg. across campaigns</span>
+                            </p>
+                        </div>
+                        <div className="stat-icon clicked">
+                            <MousePointer size={24} />
+                        </div>
                     </div>
-                    <div className="stat-content">
-                        <p className="stat-label">Reply Rate</p>
-                        <p className="stat-value">{stats.reply_rate}%</p>
-                        <p className="stat-change positive">Avg. across campaigns</p>
+                </div>
+
+                <div className="stat-card">
+                    <div className="stat-card-header">
+                        <div className="stat-content">
+                            <p className="stat-label">Reply Rate</p>
+                            <p className="stat-value">{stats.reply_rate}%</p>
+                            <p className="stat-change positive">
+                                <span className="change-value">Avg. across campaigns</span>
+                            </p>
+                        </div>
+                        <div className="stat-icon replied">
+                            <MessageSquare size={24} />
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div className="charts-grid">
-                {/* Main Component: Chart */}
+                {/* Main Component: Engagement Chart */}
                 <div className="chart-card">
                     <h2>Engagement Overview</h2>
                     <div style={{ width: '100%', height: 300 }}>
                         <ResponsiveContainer>
                             <BarChart data={stats.daily_stats}>
-                                <CartesianGrid strokeDasharray="3 3" vertical={false} />
-                                <XAxis dataKey="name" />
-                                <YAxis />
-                                <Tooltip />
-                                <Bar dataKey="sent" fill="#9ca3af" radius={[4, 4, 0, 0]} />
-                                <Bar dataKey="opened" fill="#60a5fa" radius={[4, 4, 0, 0]} />
-                                <Bar dataKey="clicked" fill="#3b82f6" radius={[4, 4, 0, 0]} />
+                                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
+                                <XAxis dataKey="name" stroke="#94a3b8" style={{ fontSize: '0.85rem' }} />
+                                <YAxis stroke="#94a3b8" style={{ fontSize: '0.85rem' }} />
+                                <Tooltip 
+                                    contentStyle={{
+                                        backgroundColor: '#ffffff',
+                                        border: '1px solid #e2e8f0',
+                                        borderRadius: '8px',
+                                        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)'
+                                    }}
+                                />
+                                <Bar dataKey="sent" fill="#94a3b8" radius={[4, 4, 0, 0]} />
+                                <Bar dataKey="opened" fill="#3b82f6" radius={[4, 4, 0, 0]} />
+                                <Bar dataKey="clicked" fill="#4f46e5" radius={[4, 4, 0, 0]} />
                             </BarChart>
                         </ResponsiveContainer>
                     </div>
@@ -166,7 +189,7 @@ const Dashboard = () => {
                 <div className="activity-card">
                     <div className="activity-header">
                         <h2>Recent Activity</h2>
-                        <ActivityIcon size={20} className="text-gray-400" />
+                        <ActivityIcon size={20} />
                     </div>
                     <div className="activity-list">
                         {stats.recent_activity.length === 0 ? (
