@@ -1,0 +1,315 @@
+/* Campaign List Styling */
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page-header h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111827;
+    margin: 0;
+}
+
+.page-header p {
+    color: #6b7280;
+    margin-top: 4px;
+}
+
+.primary-btn {
+    background-color: #2563eb;
+    /* blue-600 */
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: background-color 0.2s;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.primary-btn:hover {
+    background-color: #1d4ed8;
+    /* blue-700 */
+}
+
+/* Toolbar */
+.table-container {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f3f4f6;
+    overflow: hidden;
+}
+
+.toolbar {
+    padding: 16px;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.search-wrapper {
+    position: relative;
+    flex: 1;
+    max-width: 480px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+}
+
+.search-input {
+    width: 100%;
+    padding: 8px 16px 8px 40px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.search-input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.filter-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #374151;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.filter-btn:hover {
+    background-color: #f9fafb;
+}
+
+/* Table */
+.campaign-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.campaign-table th {
+    padding: 12px 24px;
+    background-color: #f9fafb;
+    color: #6b7280;
+    font-weight: 500;
+    font-size: 0.875rem;
+}
+
+.campaign-table td {
+    padding: 16px 24px;
+    border-bottom: 1px solid #e5e7eb;
+    color: #374151;
+}
+
+.campaign-table tr:hover {
+    background-color: #f9fafb;
+}
+
+.campaign-link {
+    font-weight: 500;
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.campaign-link:hover {
+    text-decoration: underline;
+}
+
+/* Badges */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 10px;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.badge.active {
+    background-color: #d1fae5;
+    /* green-100 */
+    color: #065f46;
+    /* green-800 */
+}
+
+.badge.draft {
+    background-color: #f3f4f6;
+    /* gray-100 */
+    color: #1f2937;
+    /* gray-800 */
+}
+
+.badge.completed {
+    background-color: #dbeafe;
+    /* blue-100 */
+    color: #1e40af;
+    /* blue-800 */
+}
+
+/* Actions */
+.action-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    padding: 4px;
+    color: #9ca3af;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.icon-btn:hover {
+    color: #4b5563;
+}
+
+.icon-btn.delete:hover {
+    color: #ef4444;
+}
+
+/* Loading and Error States */
+.loading-state,
+.error-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 64px 24px;
+    text-align: center;
+    color: #6b7280;
+}
+
+.loading-state svg {
+    margin-bottom: 16px;
+    color: #9ca3af;
+}
+
+.error-state button {
+    margin-top: 16px;
+}
+
+.empty-state {
+    text-align: center;
+    color: #9ca3af;
+    padding: 48px 24px;
+}
+
+/* Badge for paused status */
+.badge.paused {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+/* Badge for running status */
+.badge.running {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+/* Badge for stopped status */
+.badge.stopped {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+/* Badge for failed status */
+.badge.failed {
+    background-color: #fecaca;
+    color: #7f1d1d;
+}
+
+/* Badge for active status (treat as running) */
+.badge.active {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+/* Badge for scheduled status */
+.badge.scheduled {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+/* Badge for completed status */
+.badge.completed {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+/* Action button styles */
+.icon-btn.start {
+    color: #10b981;
+}
+
+.icon-btn.start:hover {
+    color: #059669;
+}
+
+.icon-btn.pause {
+    color: #f59e0b;
+}
+
+.icon-btn.pause:hover {
+    color: #d97706;
+}
+
+.icon-btn.stop {
+    color: #ef4444;
+}
+
+.icon-btn.stop:hover {
+    color: #dc2626;
+}
+
+.icon-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.icon-btn.view {
+    color: #6b7280;
+}
+
+.icon-btn.view:hover {
+    color: #374151;
+}
+
+.icon-btn.delete {
+    color: #ef4444;
+}
+
+.icon-btn.delete:hover {
+    color: #dc2626;
+}

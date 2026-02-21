@@ -1,0 +1,268 @@
+/* Create Campaign Styling */
+
+.wizard-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Wizard Header */
+.wizard-header {
+    margin-bottom: 32px;
+}
+
+.wizard-header h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111827;
+    margin: 0 0 8px 0;
+}
+
+.wizard-steps {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.wizard-step {
+    padding: 4px 12px;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+.wizard-step.active {
+    background-color: #dbeafe;
+    /* blue-100 */
+    color: #1d4ed8;
+    /* blue-700 */
+    font-weight: 500;
+}
+
+.step-separator {
+    color: #9ca3af;
+}
+
+/* Wizard Content */
+.wizard-content {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f3f4f6;
+    padding: 32px;
+    min-height: 400px;
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 8px;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+    width: 100%;
+    padding: 10px 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    box-sizing: border-box;
+    /* Important for width: 100% */
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.form-textarea {
+    height: 250px;
+    resize: vertical;
+    font-family: inherit;
+}
+
+.form-hint {
+    font-size: 0.75rem;
+    color: #6b7280;
+    margin-top: 4px;
+}
+
+/* Wizard Actions */
+.wizard-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+}
+
+.nav-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+}
+
+.nav-btn.back {
+    background-color: transparent;
+    color: #4b5563;
+}
+
+.nav-btn.back:hover {
+    background-color: #f3f4f6;
+}
+
+.nav-btn.back.hidden {
+    visibility: hidden;
+}
+
+.nav-btn.next {
+    background-color: #2563eb;
+    color: #fff;
+}
+
+.nav-btn.next:hover {
+    background-color: #1d4ed8;
+}
+
+.nav-btn.launch {
+    background-color: #16a34a;
+    /* green-600 */
+    color: #fff;
+}
+
+.nav-btn.launch:hover {
+    background-color: #15803d;
+}
+
+/* Follow-up Steps Styling */
+.followup-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.followup-card {
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 24px;
+    position: relative;
+}
+
+.followup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.followup-title {
+    font-weight: 600;
+    color: #374151;
+    font-size: 1.1rem;
+}
+
+.followup-remove-btn {
+    color: #ef4444;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.875rem;
+}
+
+.followup-remove-btn:hover {
+    text-decoration: underline;
+}
+
+.condition-row {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+    align-items: center;
+    background: #fff;
+    padding: 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+}
+
+.condition-label {
+    font-weight: 500;
+    color: #4b5563;
+    margin-right: 8px;
+}
+
+.condition-select {
+    padding: 6px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+.condition-input-num {
+    width: 60px;
+    padding: 6px 8px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.add-followup-btn {
+    width: 100%;
+    padding: 16px;
+    border: 2px dashed #d1d5db;
+    border-radius: 12px;
+    color: #6b7280;
+    background: none;
+    cursor: pointer;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.2s;
+}
+
+.add-followup-btn:hover {
+    border-color: #3b82f6;
+    color: #3b82f6;
+    background-color: #eff6ff;
+}
+
+/* Review Step */
+.review-section {
+    background-color: #f9fafb;
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 16px;
+}
+
+.review-label {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-bottom: 4px;
+}
+
+.review-value {
+    font-weight: 500;
+    color: #111827;
+}

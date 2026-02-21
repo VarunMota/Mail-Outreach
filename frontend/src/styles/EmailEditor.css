@@ -1,0 +1,76 @@
+/* Email Editor Styles */
+.email-editor-container {
+  width: 100%;
+}
+
+/* Content Editable Area Styles */
+.email-editor-container [contenteditable] {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.email-editor-container [contenteditable]:focus {
+  outline: none;
+}
+
+.email-editor-container [contenteditable] p {
+  margin: 0 0 0.75em 0;
+}
+
+.email-editor-container [contenteditable] p:last-child {
+  margin-bottom: 0;
+}
+
+.email-editor-container [contenteditable] a {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+.email-editor-container [contenteditable] img {
+  max-width: 100%;
+  height: auto;
+}
+
+.email-editor-container [contenteditable] ul,
+.email-editor-container [contenteditable] ol {
+  margin: 0 0 0.75em 0;
+  padding-left: 24px;
+}
+
+.email-editor-container [contenteditable] li {
+  margin-bottom: 0.25em;
+}
+
+/* Variable dropdown styling */
+.variable-dropdown-item {
+  transition: background-color 0.2s;
+}
+
+.variable-dropdown-item:hover {
+  background-color: #f3f4f6;
+}
+
+/* Preview modal overlay */
+.preview-modal-overlay {
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Ensure variables are visible in editor */
+.variable-token {
+  background-color: #dbeafe;
+  color: #1e40af;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.9em;
+}

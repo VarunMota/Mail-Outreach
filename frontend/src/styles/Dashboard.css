@@ -1,0 +1,272 @@
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.dashboard-header h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111827;
+    margin: 0;
+}
+
+.dashboard-header p {
+    color: #6b7280;
+    margin-top: 4px;
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 24px;
+}
+
+@media (min-width: 768px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.stat-card {
+    background-color: #fff;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f3f4f6;
+}
+
+.stat-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.stat-title {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-bottom: 4px;
+    margin-top: 0;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111827;
+    margin: 0;
+}
+
+.stat-icon {
+    padding: 12px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-icon svg {
+    color: #fff;
+}
+
+.stat-change {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    font-size: 0.875rem;
+}
+
+.change-value {
+    font-weight: 500;
+    color: #10b981;
+    /* green-500 */
+}
+
+.change-label {
+    color: #9ca3af;
+    margin-left: 8px;
+}
+
+/* Charts Section */
+.charts-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+}
+
+@media (min-width: 1024px) {
+    .charts-section {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+.chart-card {
+    background-color: #fff;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f3f4f6;
+}
+
+.chart-header {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #111827;
+    margin-top: 0;
+    margin-bottom: 24px;
+}
+
+.chart-container {
+    height: 300px;
+}
+
+/* Upcoming Campaigns */
+.upcoming-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.campaign-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    background-color: #f9fafb;
+    border-radius: 8px;
+}
+
+.campaign-info h4 {
+    font-weight: 500;
+    color: #111827;
+    margin: 0;
+}
+
+.campaign-info p {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin: 4px 0 0 0;
+}
+
+.status-badge {
+    padding: 4px 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #2563eb;
+    background-color: #dbeafe;
+    border-radius: 9999px;
+}
+
+/* Loading and Error States */
+.loading-state,
+.error-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 64px 24px;
+    text-align: center;
+    color: #6b7280;
+}
+
+.loading-state svg,
+.error-state svg {
+    margin-bottom: 16px;
+    color: #9ca3af;
+}
+
+.loading-state p,
+.error-state p {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.error-state h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #111827;
+    margin: 16px 0 8px;
+}
+
+.retry-btn {
+    margin-top: 16px;
+    padding: 8px 16px;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.retry-btn:hover {
+    background-color: #2563eb;
+}
+
+/* Activity List */
+.activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.activity-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.activity-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-top: 6px;
+    flex-shrink: 0;
+}
+
+.activity-dot.sent { background-color: #9ca3af; }
+.activity-dot.opened { background-color: #60a5fa; }
+.activity-dot.clicked { background-color: #3b82f6; }
+.activity-dot.replied { background-color: #10b981; }
+
+.activity-details {
+    flex: 1;
+}
+
+.activity-title {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #111827;
+    margin: 0;
+}
+
+.activity-time {
+    font-size: 0.75rem;
+    color: #9ca3af;
+    margin: 4px 0 0;
+}
+
+.no-activity {
+    text-align: center;
+    color: #9ca3af;
+    padding: 24px;
+    font-size: 0.875rem;
+}
+
+/* Animation */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.animate-spin {
+    animation: spin 1s linear infinite;
+}
